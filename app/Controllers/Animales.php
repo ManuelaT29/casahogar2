@@ -76,6 +76,7 @@ class Animales extends BaseController
 
         }catch(\Exception $error){
                  
+            return redirect()->to(site_url('/animales/registro'))->with('mensaje',$error->getMessage());
          
 
         }
