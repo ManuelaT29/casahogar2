@@ -16,7 +16,7 @@ class Animales extends BaseController
         
         //1.recibbo todos los datos enviados desde el formulario
        
-        //.lo que tengo entre getPost("") es el name que puse en registroproductos.php
+        //.lo que tengo entre getPost("") es el name que puse en registroanimales.php
     
         $nombre=$this->request->getPost("nombre");
         $edad=$this->request->getPost("edad");
@@ -76,7 +76,6 @@ class Animales extends BaseController
 
         }catch(\Exception $error){
                  
-            return redirect()->to(site_url('/productos/registro'))->with('mensaje',$error->getMessage());
          
 
         }
@@ -87,14 +86,83 @@ class Animales extends BaseController
 
             $modelo = new AnimalModelo();
             $modelo ->where('id',$id)->delete();
-            return redirect()->to(site_url('/productos/registro'))->with('mensaje',"Exito eliminando el producto");
+            return redirect()->to(site_url('/animales/registro'))->with('mensaje',"Exito eliminando el producto");
 
         }catch(\Exception $error){
                  
-            return redirect()->to(site_url('/productos/registro'))->with('mensaje',$error->getMessage());
+            return redirect()->to(site_url('/animales/registro'))->with('mensaje',$error->getMessage());
          
 
         }
     }
 
+    public function editar ($id){
+
+        //Recibo datos
+        $nombre=$this->request->getPost("nombre");
+        $edad=$this->request->getPost("edad");
+        $descripcion=$this->request->getPost("descripcion");
+
+        //Validacion de datos
+       
+         //Organizo los datos en un arreglo asociativo
+         $datos=array(
+            'nombre'=>$nombre,
+            'edad'=>$edad,
+            'descripcion'=>$descripcion
+        );
+
+        // echo("Estamos editando el producto".$id);
+        //print_r($datos);
+
+        //crear un objeto del modelo
+        try{
+
+            $modelo = new AnimalModelo();
+            $modelo->update($id,$datos);
+            return redirect()->to(site_url('/animales/registro'))->with('mensaje',"Exito editando el animal");
+
+         }catch(\Exception $error){
+             
+            return redirect()->to(site_url('/animales/registro'))->with('mensaje',$error->getMessage());
+         }
+
+           
+
+    }
+
+    public function listarperro(){
+        try{
+
+            $modelo = new AnimalModelo();
+            $resultado= $modelo->findAll();
+            $animales=array('animales'=>$resultado);
+            return view('listarperro',$animales);
+
+           
+
+        }catch(\Exception $error){
+                 
+            return redirect()->to(site_url('/animales/registro'))->with('mensaje',$error->getMessage());
+         
+
+        }
+    }
+    public function listargatos(){
+        try{
+
+            $modelo = new AnimalModelo();
+            $resultado= $modelo->findAll();
+            $animales=array('animales'=>$resultado);
+            return view('listargatos',$animales);
+
+           
+
+        }catch(\Exception $error){
+                 
+            return redirect()->to(site_url('/animales/registro'))->with('mensaje',$error->getMessage());
+         
+
+        }
+    }
 }

@@ -46,6 +46,7 @@
         <div class="container mt-5">
             <div class="row row- cols-1 row-cols-md-5 g-4">
                 <?php foreach($animales as $animal): ?>
+                    <?php  if ($animal["tipo"]==2 ):?>
                     <div class="col">
                         <div class="card h-100 p-3" >
                             <img src="<?= $animal["foto"]  ?>" class="card-img-top" alt="...">
@@ -77,6 +78,7 @@
                             </div>
                         </div>
                     </section>
+                    
                     <section>  
                         <div class="modal fade" id="editar<?= $animal["id"]?>" tabindex="-1"aria-labelledby="exampleModalLabel"aria-hidden="true">
                             <div class="modal-dialog">
@@ -113,7 +115,8 @@
                             </div>
                         </div>
                     </section>
-                    </div>
+                </div>
+                <?php endif?>
                 <?php endforeach ?>
             </div>
         </div>

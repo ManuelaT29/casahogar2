@@ -87,13 +87,13 @@
 			</div>
 			<div class="row d-flex justify-content-center mt-5 mx-5 mb-5">
 				<div class="col-1">
-					<a href="">
-						<img src="<?= base_url('public/img/dog-icon.png')?>" alt="icono1" class="img-fluid zoom">
+					<a href="<?= site_url('/animales/listarperro/')?>">
+						<img src="<?= base_url('public/img/dog-icon.png') ?>" alt="icono1" class="img-fluid zoom">
 					</a>
             		<p class="text-center">perros</p>
           		</div>
 				<div class="col-1">
-					<a href="">
+					<a href="<?= site_url('/animales/listargatos/')?>">
 						<img src="<?= base_url('public/img/cat-icon.png')?>" alt="icono1" class="img-fluid zoom">
 					</a>
 					<p class="text-center">gatos</p>
