@@ -50,9 +50,9 @@ $routes->post('/animales/editar/(:num)', 'Animales::editar/$1');
 //rutas listar animales
 $routes->post('/animales/listarperro/', 'Animales::listarperro');
 $routes->post('/animales/listargatos/', 'Animales::listargato');
-
-
-
+$routes->post('/animales/listaraves/', 'Animales::listaraves');
+$routes->post('/animales/listarreptiles/', 'Animales::listarreptiles');
+$routes->post('/animales/listarcaballos/', 'Animales::listarcaballos');
 
 
 /*

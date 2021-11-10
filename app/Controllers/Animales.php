@@ -15,7 +15,6 @@ class Animales extends BaseController
     public function registrar(){
         
         //1.recibbo todos los datos enviados desde el formulario
-       
         //.lo que tengo entre getPost("") es el name que puse en registroanimales.php
     
         $nombre=$this->request->getPost("nombre");
@@ -39,7 +38,6 @@ class Animales extends BaseController
                 "tipo"=>$tipo
             );
 
-
          //4. intentamos grabar los datos en Bd
          try{
 
@@ -47,21 +45,16 @@ class Animales extends BaseController
             $modelo->insert($datos);
             return redirect()->to(site_url('/animales/registro'))->with('mensaje',"Exito");
 
-         }catch(\Exception $error){
-             
+         }catch(\Exception $error){ 
             return redirect()->to(site_url('/animales/registro'))->with('mensaje',$error->getMessage());
          }
 
+        } else{
 
-    } else{
-
-        $mensaje ="tienes datos pendientes";
-        return redirect()->to(site_url('/animales/registro'))->with('mensaje',$mensaje);
-
-         // echo("Tienes datos pendientes");
-
+            $mensaje ="tienes datos pendientes";
+            return redirect()->to(site_url('/animales/registro'))->with('mensaje',$mensaje);
+   
         }
-        
     }
 
     public function buscar(){
@@ -149,6 +142,7 @@ class Animales extends BaseController
 
         }
     }
+
     public function listargatos(){
         try{
 
@@ -166,4 +160,60 @@ class Animales extends BaseController
 
         }
     }
+
+    public function listaraves(){
+        try{
+
+            $modelo = new AnimalModelo();
+            $resultado= $modelo->findAll();
+            $animales=array('animales'=>$resultado);
+            return view('listaraves',$animales);
+
+           
+
+        }catch(\Exception $error){
+                 
+            return redirect()->to(site_url('/animales/registro'))->with('mensaje',$error->getMessage());
+         
+
+        }
+    }
+
+    public function listarreptiles(){
+        try{
+
+            $modelo = new AnimalModelo();
+            $resultado= $modelo->findAll();
+            $animales=array('animales'=>$resultado);
+            return view('listarreptiles',$animales);
+
+           
+
+        }catch(\Exception $error){
+                 
+            return redirect()->to(site_url('/animales/registro'))->with('mensaje',$error->getMessage());
+         
+
+        }
+    }
+
+    public function listarcaballos(){
+        try{
+
+            $modelo = new AnimalModelo();
+            $resultado= $modelo->findAll();
+            $animales=array('animales'=>$resultado);
+            return view('listarcaballos',$animales);
+
+           
+
+        }catch(\Exception $error){
+                 
+            return redirect()->to(site_url('/animales/registro'))->with('mensaje',$error->getMessage());
+         
+
+        }
+    }
+
+
 }

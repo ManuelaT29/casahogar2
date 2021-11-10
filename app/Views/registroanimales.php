@@ -10,7 +10,7 @@
 	<link href = "https: //fonts.googleapis.com/css2? family = Handlee & display = swap "rel =" stylesheet ">
 	<link rel="stylesheet" href="<?php echo (base_url('public/styles/estilos.css'))?>">
 
-    <title>CasaHogar</title>
+    <title>AnimalPets</title>
 </head>
 <body>
 <header>
@@ -18,7 +18,7 @@
 			<div class="container-fluid">
 				<a class="navbar-brand fuente" href="#">
 					<i class="fas fa-paw"></i>
-					Animalandia
+					AnimalPets
 				</a>
 				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
@@ -79,14 +79,14 @@
                         </div>
                         
 						<div class="d-grid gap-2">
-                    <button type="submit" class="btn btn-primary btn-sm">Butto</button>
+                    <button type="submit" class="btn fondoPrincipal mt-2 text-white">Guardar</button>
                         </div>
                         
                     </form>
                 </div>
                 <div class="col-12 col-md-5 align-self-end">
-                    <img src="<?= base_url('public/img/registro1.png')?>" alt="imagen" class="img-fluid w-100">
-                    <a href="<?= site_url('/animales/listado')?>" class="btn btn-primary">ver inventario</a>
+                    <img src="<?= base_url('public/img/adopcion1.jpeg')?>" alt="imagen" class="img-fluid w-100">
+                    <a href="<?= site_url('/animales/listado')?>" class="btn fondoPrincipal mt-2 text-white">ver inventario</a>
 
                 </div>
             </div>
@@ -101,7 +101,7 @@
             <div class="modal-dialog">
                 <div class="modal-content">
                      <div class="fondoPrincipal">
-                        <h5 class="modal-title">CASA HOGAR</h5>
+                        <h5 class="modal-title">AnimalPets</h5>
                         </div>
                              <div class="modal-body"> 
                                 <h5><?= session('mensaje') ?></h5>
@@ -139,7 +139,7 @@
 			</div>
 
 			<div class="col-12 col-md-4">
-				<h1 class="fw-bold fuente"><span><i class="fas fa-paw"></i></span>ANIMALANDIA</h1>
+				<h1 class="fw-bold fuente"><span><i class="fas fa-paw"></i></span>AnimalPets</h1>
 				<br>
 				<i class="fab fa-facebook fa-3x"></i>
 				<i class="fab fa-instagram fa-3x"></i>

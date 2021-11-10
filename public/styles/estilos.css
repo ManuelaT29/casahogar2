@@ -8,11 +8,11 @@
 }
 
 .fondoPrincipal{
-    background-color: #07A1E1 !important;
+    background-color: #20B2AA !important;
 }
 
 .boton{
-    background-color:#07A1E1 !important;
+    background-color:#20B2AA !important;
     color:white !important;
 }
 
@@ -30,7 +30,7 @@
 
 .fondoAdopcion{
     -webkit-filter: grayscale(100%);
-    background-image: url('../img/adopcion2.jpg');
+    background-image: url('../img/gatofondo.jpeg');
     background-attachment: fixed;
     height: 450px;
     filter: grayscale(100%);
